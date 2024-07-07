@@ -9,7 +9,7 @@
 
     Клонируйте репозиторий:
    ```bash
-   git clone https://github.com/Synberg/CRUD-application.git
+   git clone -b develop https://github.com/Synberg/CRUD-application.git
    ```
 
 2. **Сборка проекта с помощью Maven:**
