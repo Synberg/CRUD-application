@@ -19,6 +19,7 @@
     mvn clean install -DskipTests
     ```
 3. **Запуск приложения с помощью Docker Compose**
+
     Установите Docker, затем выполните:
     ```bash
     docker-compose up
