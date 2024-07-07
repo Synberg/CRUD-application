@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "f9317a26-c01f-4419-ab6a-8da09a259469",
+		"name": "Mediasoft",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36792072"
+	},
+	"item": [
+		{
+			"name": "Get all products",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Add product A",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Product A\",\r\n    \"article\": \"A001\",\r\n    \"description\": \"Description for Product A\",\r\n    \"category\": \"Category 1\",\r\n    \"price\": 10.50,\r\n    \"quantity\": 100,\r\n    \"lastModified\": \"2024-07-07T12:00:00\",\r\n    \"createdDate\": \"2024-07-07T10:00:00\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/products",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add product B",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Product B\",\r\n    \"article\": \"B002\",\r\n    \"description\": \"Description for Product B\",\r\n    \"category\": \"Category 2\",\r\n    \"price\": 25.00,\r\n    \"quantity\": 50,\r\n    \"lastModified\": \"2024-07-07T12:30:00\",\r\n    \"createdDate\": \"2024-07-07T11:00:00\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/products",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update product A",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Updated Product A\",\r\n    \"article\": \"A001\",\r\n    \"description\": \"Updated Description for Product A\",\r\n    \"category\": \"Updated Category 1\",\r\n    \"price\": 15.00,\r\n    \"quantity\": 150,\r\n    \"lastModified\": \"2024-07-07T13:00:00\",\r\n    \"createdDate\": \"2024-07-07T10:00:00\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/products/60b242ee-eba1-4135-9cef-795815dd17cb",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"60b242ee-eba1-4135-9cef-795815dd17cb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update product B",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Updated Product B\",\r\n    \"article\": \"B002\",\r\n    \"description\": \"Updated Description for Product B\",\r\n    \"category\": \"Updated Category 2\",\r\n    \"price\": 30.00,\r\n    \"quantity\": 60,\r\n    \"lastModified\": \"2024-07-07T14:00:00\",\r\n    \"createdDate\": \"2024-07-07T11:00:00\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/products/d7c4ece4-4fbc-4589-ac86-c088a3145452",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"d7c4ece4-4fbc-4589-ac86-c088a3145452"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete product B",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/products/d7c4ece4-4fbc-4589-ac86-c088a3145452",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"d7c4ece4-4fbc-4589-ac86-c088a3145452"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
