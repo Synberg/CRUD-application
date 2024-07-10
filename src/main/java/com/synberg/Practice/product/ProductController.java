@@ -9,6 +9,9 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * REST controller for managing products.
+ */
 @RestController
 @RequestMapping("/api/products")
 public class ProductController {
@@ -16,11 +19,23 @@ public class ProductController {
     @Autowired
     private ProductRepository productRepository;
 
+    /**
+     * Get all products.
+     *
+     * @return a list of all products
+     */
     @GetMapping
     public List<Product> getAllProducts() {
         return productRepository.findAll();
     }
 
+    /**
+     * Get a product by its ID.
+     *
+     * @param id the UUID of the product
+     * @return the product with the specified ID
+     * @throws ResourceNotFoundException if the product with the specified ID is not found
+     */
     @GetMapping("/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable UUID id) {
         Product product = productRepository.findById(id)
@@ -28,6 +43,12 @@ public class ProductController {
         return ResponseEntity.ok(product);
     }
 
+    /**
+     * Create a new product.
+     *
+     * @param product the product to create
+     * @return the created product
+     */
     @PostMapping
     public Product createProduct(@RequestBody Product product) {
         product.setCreatedDate(LocalDateTime.now());
@@ -35,11 +56,18 @@ public class ProductController {
         return productRepository.save(product);
     }
 
+    /**
+     * Update an existing product.
+     *
+     * @param id the UUID of the product to update
+     * @param productDetails the product details to update
+     * @return the updated product
+     * @throws ResourceNotFoundException if the product with the specified ID is not found
+     */
     @PutMapping("/{id}")
     public ResponseEntity<Product> updateProduct(@PathVariable UUID id, @RequestBody Product productDetails) {
         Product product = productRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Product not found with id " + id));
-
         product.setName(productDetails.getName());
         product.setArticle(productDetails.getArticle());
         product.setDescription(productDetails.getDescription());
@@ -52,6 +80,13 @@ public class ProductController {
         return ResponseEntity.ok(updatedProduct);
     }
 
+    /**
+     * Delete a product by its ID.
+     *
+     * @param id the UUID of the product to delete
+     * @return a response indicating the result of the delete operation
+     * @throws ResourceNotFoundException if the product with the specified ID is not found
+     */
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteProduct(@PathVariable UUID id) {
         Product product = productRepository.findById(id)
